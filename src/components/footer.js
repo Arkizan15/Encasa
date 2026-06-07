@@ -14,15 +14,15 @@ function renderFooter() {
       <nav class="footer__nav">
         <div class="footer__nav-col">
           <h4>Menu</h4>
-          <a href="#hero">Home</a>
-          <a href="#gallery">Galery</a>
-          <a href="#management">Management</a>
-          <a href="#join">Join us</a>
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Galery</a>
+          <a href="management.html">Management</a>
+          <a href="join.html">Join us</a>
         </div>
         <div class="footer__nav-col">
           <h4>Join us</h4>
-          <a href="#" target="_blank" rel="noopener">Whatsapp</a>
-          <a href="#" target="_blank" rel="noopener">GForm</a>
+          <a href="https://wa.me/6287857911279" target="_blank" rel="noopener">Whatsapp</a>
+          <a href="https://forms.gle/KFHr2Nu58FSo83Vb7" target="_blank" rel="noopener">GForm</a>
         </div>
         <div class="footer__nav-col">
           <h4>Social Media</h4>

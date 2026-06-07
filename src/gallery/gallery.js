@@ -20,7 +20,7 @@ document.querySelector('#app').innerHTML = `
   <main>
     <section class="gallery-hero">
       <div class="gallery-hero__overlay">
-        <h1 class="gallery-hero__title">Our Galery</h1>
+        <h1 class="gallery-hero__title">Galery</h1>
       </div>
     </section>
 
