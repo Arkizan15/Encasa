@@ -1,3 +1,19 @@
+:root {
+  --blue-primary: #587bb4;
+  --blue-bg: #648bc7;
+  --text-white: #eeeeee;
+  --card-bg: #ffffff;
+  --text-dark: #333333;
+  --connector-color: #ffffff;
+  --shadow-bottom: #4a6691;
+  --font-family: 'Poppins', -apple-system, sans-serif;
+  --bg-secondary: rgba(80, 132, 195, 0.6);
+}
+
+body {
+  font-family: var(--font-family);
+}
+
 .join-section {
   min-height: 80vh;
   display: flex;
@@ -5,15 +21,14 @@
   justify-content: center;
   gap: 60px;
   padding: 100px 40px;
-  background: #f5f8ff;
+  background: linear-gradient(rgba(46, 57, 73, 0.5), rgba(63, 103, 152, 0.5)), url("/Image/Galery/WhatsApp Image 2025-11-28 at 19.00.27 (1).jpeg") center/cover no-repeat;
 }
 
 .join-section__image img {
-  width: 500px;
+  width: 12rem;
   max-width: 100%;
   border-radius: 20px;
   object-fit: cover;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 .join-section__content {
@@ -22,15 +37,16 @@
 
 .join-section__content h1 {
   font-size: 3rem;
+  font-family: var(--font-family);
   font-weight: 700;
-  color: #4f6b98;
+  color: whitesmoke;
   margin-bottom: 20px;
 }
 
 .join-section__content p {
   font-size: 1rem;
   line-height: 1.8;
-  color: #555;
+  color: whitesmoke;
   margin-bottom: 30px;
 }
 

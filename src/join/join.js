@@ -24,10 +24,10 @@ function renderJoinSection() {
       </div>
 
       <div class="join-section__content">
-        <h1>Join ENCASA</h1>
+        <h1>Join us in Encasa!</h1>
 
         <p>
-         Join ENCASA and become part of an active, creative, and passionate community.
+          and become part of an active, creative, and passionate community.
          Develop your skills, build new relationships, and
          contribute to various organizational activities.
         </p>
