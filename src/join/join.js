@@ -20,7 +20,7 @@ function renderJoinSection() {
     <section class="join-section">
 
       <div class="join-section__image">
-        <img src="/assets/encasa.jpg" alt="ENCASA">
+        <img src="/public/mascot/mascot-full.png" alt="ENCASA">
       </div>
 
       <div class="join-section__content">
