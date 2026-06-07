@@ -26,8 +26,8 @@ function renderFooter() {
         </div>
         <div class="footer__nav-col">
           <h4>Social Media</h4>
-          <a href="#" target="_blank" rel="noopener">Instagram</a>
-          <a href="#" target="_blank" rel="noopener">Linkedin</a>
+          <a href="https://www.instagram.com/englishclub.esemkasa/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/company/english-club-esemkasa-encasa/" target="_blank" rel="noopener">Linkedin</a>
         </div>
       </nav>
     </footer>

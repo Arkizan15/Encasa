@@ -18,13 +18,8 @@ document.querySelector('#app').innerHTML = `
 function renderJoinSection() {
   return `
     <section class="join-section">
-
-      <div class="join-section__image">
-        <img src="/public/mascot/mascot-full.png" alt="ENCASA">
-      </div>
-
       <div class="join-section__content">
-        <h1>Join us in Encasa!</h1>
+        <h1>Join us in Encasa</h1>
 
         <p>
           and become part of an active, creative, and passionate community.
@@ -38,7 +33,7 @@ function renderJoinSection() {
             target="_blank"
             class="btn btn-wa"
           >
-            WhatsApp
+            Contact us
           </a>
 
           <a

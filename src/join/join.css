@@ -10,12 +10,17 @@
   --bg-secondary: rgba(80, 132, 195, 0.6);
 }
 
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 body {
   font-family: var(--font-family);
 }
 
 .join-section {
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,14 +29,11 @@ body {
   background: linear-gradient(rgba(46, 57, 73, 0.5), rgba(63, 103, 152, 0.5)), url("/Image/Galery/WhatsApp Image 2025-11-28 at 19.00.27 (1).jpeg") center/cover no-repeat;
 }
 
-.join-section__image img {
-  width: 12rem;
-  max-width: 100%;
-  border-radius: 20px;
-  object-fit: cover;
-}
+
 
 .join-section__content {
+  align-items: center;
+  justify-content: center;
   max-width: 500px;
 }
 
@@ -40,7 +42,7 @@ body {
   font-family: var(--font-family);
   font-weight: 700;
   color: whitesmoke;
-  margin-bottom: 20px;
+
 }
 
 .join-section__content p {

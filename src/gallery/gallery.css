@@ -1,168 +1,113 @@
 /* ================================================================
-   Gallery.css  –  Encasa Gallery Page
-   Mobile-first | Bootstrap compatible
+   Gallery.css  –  Encasa Gallery Page (Flexbox Remake)
    ================================================================ */
 
-/* ── CSS Variables ─────────────────────────────────────────────── */
 :root {
-  --gallery-blue: #5a9fd4;
-  --gallery-blue-dark: #3a7abf;
-  --gallery-bg: #6ba3cc;
-  --gallery-card-radius: 14px;
-  --gallery-card-border: 4px solid #ffffff;
-  --gallery-overlay-bg: rgba(30, 70, 120, 0.55);
-  --gallery-hero-height: 260px;
-  --gallery-section-padding: 2rem 0 3rem;
+  --gallery-bg-color: #5a8fd4; /* Latar belakang biru cerah sesuai foto referensi */
+  --gallery-card-radius: 16px;
+  --gallery-border-width: 6px; /* Ketebalan border putih */
+  --gallery-gap: 16px;        /* Jarak antar kartu */
 }
 
-/* ── Hero ──────────────────────────────────────────────────────── */
+/* ── Hero Banner ────────────────────────────────────────────────── */
 .gallery-hero {
+  position: relative;
   width: 100%;
+  height: 240px; /* Tinggi default mobile */
+  background: url('/Image/Home.webp') center/cover no-repeat; 
 }
 
-.gallery-hero__placeholder {
-  width: 100%;
-  height: var(--gallery-hero-height);
-  background: linear-gradient(
-    135deg,
-    var(--gallery-blue-dark) 0%,
-    var(--gallery-blue) 60%,
-    #8dc6e8 100%
-  );
+.gallery-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(35, 75, 130, 0.55); /* Efek filter biru gelap transparan */
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Subtle pattern overlay pada hero */
-.gallery-hero__placeholder::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(
-    circle at 20% 50%,
-    rgba(255, 255, 255, 0.08) 0%,
-    transparent 60%
-  ),
-  radial-gradient(
-    circle at 80% 20%,
-    rgba(255, 255, 255, 0.06) 0%,
-    transparent 50%
-  );
-}
-
-.gallery-hero__content {
-  position: relative;
-  text-align: center;
-  color: #ffffff;
 }
 
 .gallery-hero__title {
-  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: #ffffff;
+  font-size: clamp(2.4rem, 6vw, 4rem);
   font-weight: 700;
-  letter-spacing: -0.5px;
-  margin-bottom: 0.4rem;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-}
-
-.gallery-hero__sub {
-  font-size: clamp(0.85rem, 2.5vw, 1.1rem);
-  opacity: 0.85;
   margin: 0;
-  font-weight: 400;
-  letter-spacing: 0.3px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* ── Gallery Section ───────────────────────────────────────────── */
+/* ── Gallery Section & Flex Grid ────────────────────────────────── */
 .gallery-section {
-  background-color: var(--gallery-bg);
-  padding: var(--gallery-section-padding);
+  background-color: var(--gallery-bg-color);
+  padding: 3rem 1rem;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
 }
 
-/* ── Gallery Col spacing (sudah diatur Bootstrap g-3, ini override mobile) */
-.gallery-col {
-  /* Tidak perlu tambahan; Bootstrap g-3 sudah cukup */
+.gallery-container {
+  width: 100%;
+  max-width: 1200px;
 }
 
-/* ── Gallery Card ──────────────────────────────────────────────── */
+/* Menggunakan susunan Flexbox & Wrap baris */
+.gallery-flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: var(--gallery-gap);
+  justify-content: center;
+}
+
+/* ── Pembagian Column (Mobile-First Approach) ───────────────────── */
+
+/* Default Layar HP (2 Card per baris) */
+.gallery-flex-col {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - (var(--gallery-gap) / 2));
+}
+
+/* Layar Tablet >= 768px (3 Card per baris) */
+@media (min-width: 768px) {
+  .gallery-hero {
+    height: 320px;
+  }
+  .gallery-flex-col {
+    width: calc(33.333% - (var(--gallery-gap) * 2 / 3));
+  }
+}
+
+/* Layar Desktop >= 992px (Tepat 4 Card per baris sesuai gambar referensi) */
+@media (min-width: 992px) {
+  :root {
+    --gallery-gap: 24px; /* Gap disesuaikan agak lebar agar seimbang di desktop */
+  }
+  .gallery-hero {
+    height: 380px;
+  }
+  .gallery-flex-col {
+    width: calc(25% - (var(--gallery-gap) * 3 / 4));
+  }
+}
+
+/* ── Komponen Card (Spesifikasi Lebar, Tinggi, & Tanpa Hover Effect) ── */
 .gallery-card {
   width: 100%;
+  background-color: #ffffff;
+  border: var(--gallery-border-width) solid #ffffff; /* Border putih solid tebal */
   border-radius: var(--gallery-card-radius);
-  border: var(--gallery-card-border);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  background: #ffffff;
-}
-
-.gallery-card:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
-}
-
-/* Rasio 4:3 menggunakan padding-top trick */
-.gallery-card__ratio {
-  position: relative;
-  width: 100%;
-  padding-top: 75%; /* 3/4 = 75% → rasio 4:3 */
-  overflow: hidden;
+  
+  /* Memaksa aspek rasio ukuran width dan height card menjadi tepat potret 3:4 */
+  aspect-ratio: 3 / 4; 
+  display: flex;
+  flex-direction: column;
 }
 
 .gallery-card__img {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Menjaga foto agar tetap proporsional dan tidak gepeng */
   display: block;
-  transition: transform 0.35s ease;
-}
-
-.gallery-card:hover .gallery-card__img {
-  transform: scale(1.06);
-}
-
-/* Overlay label kategori */
-.gallery-card__overlay {
-  position: absolute;
-  inset: 0;
-  background: var(--gallery-overlay-bg);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  display: flex;
-  align-items: flex-end;
-  padding: 0.6rem 0.75rem;
-}
-
-.gallery-card:hover .gallery-card__overlay {
-  opacity: 1;
-}
-
-.gallery-card__category {
-  color: #ffffff;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 20px;
-  padding: 2px 10px;
-  backdrop-filter: blur(4px);
-}
-
-/* ── Responsive tweaks ─────────────────────────────────────────── */
-@media (min-width: 768px) {
-  :root {
-    --gallery-hero-height: 320px;
-    --gallery-section-padding: 2.5rem 0 4rem;
-  }
-}
-
-@media (min-width: 992px) {
-  :root {
-    --gallery-hero-height: 380px;
-  }
+  transition: none; /* Dipastikan bersih tanpa ada animasi/efek transisi */
 }
