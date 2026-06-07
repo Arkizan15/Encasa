@@ -18,30 +18,47 @@
   background: url('/Image/Home.webp') center/cover no-repeat; 
 }
 
+/* ── Cari & Sesuaikan Elemen Overlay ── */
 .gallery-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(46, 57, 73, 0.5), rgba(63, 103, 152, 0.5)); /* Efek filter biru gelap transparan */
+  background: linear-gradient(rgba(46, 57, 73, 0.5), rgba(63, 103, 152, 0.5));
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 0 24px; /* Memberikan ruang aman kanan-kiri di layar HP */
 }
 
+/* ── Tambahkan Kontainer Teks Baru ── */
+.gallery-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Jarak vertikal yang ideal antara Title dan Subtitle */
+  width: 100%;
+}
+
+/* ── Sesuaikan Elemen Title (H1) ── */
 .gallery-hero__title {
   color: #ffffff;
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  font-weight: 700;
+  font-size: clamp(2.4em, 6vw, 12rem);
+  font-weight: 750;
   margin: 0;
-  
-  /* Hapus padding ke samping, fokuskan memberi jarak ruang aman dari navbar di atas */
-  padding-top: 4rem; 
-  padding-bottom: 1rem;
-  text-align: center;
-  width: 100%;
-  
+  padding: 0; /* Bersihkan padding bawaan agar diposisikan oleh flex content */
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  line-height: 1.2;
 }
 
+/* ── Tambahkan Style Baru untuk Subtitle Bahasa Inggris ── */
+.gallery-hero__subtitle {
+  color: #e2e8f0; /* Putih soft (tidak terlalu mencolok agar h1 tetap dominan) */
+  font-size: clamp(1rem, 3.5vw, 1.25rem); /* Otomatis mengecil di layar HP */
+  font-weight: 400;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin: 0 auto; /* Memastikan teks paragraf panjang tetap presisi di tengah */
+}
 /* ── Gallery Section & Flex Grid ────────────────────────────────── */
 .gallery-section {
   background-color: var(--gallery-bg-color);
