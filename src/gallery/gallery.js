@@ -1,6 +1,7 @@
+import './gallery.css';
 import renderNavbar from '../components/navbar.js';
 import renderFooter from '../components/footer.js';
-import './gallery.css';
+
 
 // ── KONFIGURASI ITERASI GAMBAR ──────────────────────────────────────
 // Tentukan jumlah total foto yang tersimpan di dalam folder public/Image/Galery Anda

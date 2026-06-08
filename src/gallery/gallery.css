@@ -3,6 +3,8 @@
    ================================================================ */
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
    :root {
@@ -116,7 +118,7 @@
 
   .gallery-hero__title{
     white-space: nowrap; /* Memaksa teks tetap 1 baris */
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   .gallery-flex-col {
     width: calc(25% - (var(--gallery-gap) * 3 / 4));
